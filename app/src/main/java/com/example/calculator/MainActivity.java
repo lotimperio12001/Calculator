@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 if (view instanceof Button) {
                     Button button = (Button) view;
                     String buttonText = button.getText().toString();
+
                 }
             }
         };
