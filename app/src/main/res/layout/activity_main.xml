@@ -36,21 +36,24 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="" />
+            android:text=""
+            android:onClick="onButtonClick"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="" />
+            android:text=""
+            android:onClick="onButtonClick"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="" />
+            android:text=""
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/divide"
@@ -58,7 +61,8 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="/" />
+            android:text="/"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/seven"
@@ -66,7 +70,8 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="7" />
+            android:text="7"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/eight"
@@ -74,7 +79,8 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="8" />
+            android:text="8"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/nine"
@@ -82,7 +88,8 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="9" />
+            android:text="9"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/multiply"
@@ -90,7 +97,8 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="*" />
+            android:text="*"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/four"
@@ -98,7 +106,8 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="4" />
+            android:text="4"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/five"
@@ -106,7 +115,8 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="5" />
+            android:text="5"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/six"
@@ -114,7 +124,8 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="6" />
+            android:text="6"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/subtract"
@@ -122,7 +133,8 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="-" />
+            android:text="-"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/one"
@@ -130,7 +142,8 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="1" />
+            android:text="1"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/two"
@@ -138,7 +151,8 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="2" />
+            android:text="2"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/three"
@@ -146,7 +160,8 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="3" />
+            android:text="3"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/plus"
@@ -154,14 +169,16 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="+" />
+            android:text="+"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="" />
+            android:text=""
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/zero"
@@ -169,14 +186,16 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="0" />
+            android:text="0"
+            android:onClick="onButtonClick"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="" />
+            android:text=""
+            android:onClick="onButtonClick"/>
 
         <Button
             android:id="@+id/equals"
@@ -184,7 +203,8 @@
             android:layout_height="wrap_content"
             android:minWidth="103dip"
             android:minHeight="103dip"
-            android:text="=" />
+            android:text="="
+            android:onClick="onButtonClick"/>
     </GridLayout>
 
 </LinearLayout>
