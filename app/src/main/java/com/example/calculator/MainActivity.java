@@ -17,21 +17,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         TextView preview= findViewById(R.id.preview);
         TextView response= findViewById(R.id.response);
-        Button divide= findViewById(R.id.divide);
-        Button multiply= findViewById(R.id.multiply);
-        Button subtract= findViewById(R.id.subtract);
-        Button plus= findViewById(R.id.plus);
-        Button equals= findViewById(R.id.equals);
-        View.OnClickListener buttonClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (view instanceof Button) {
-                    Button button = (Button) view;
-                    String buttonText = button.getText().toString();
+        Button[] buttons = new Button[16];
+        for (int i = 0; i < buttons.length; i++) {
+            String buttonIdName = "button" + (i + 1);
+            int buttonId = getResources().getIdentifier(buttonIdName, "id", getPackageName());
 
-                }
+            if (buttonId != 0) {
+                buttons[i] = findViewById(buttonId);
             }
-        };
+        }
+        for (int i = 0; i < buttons.length; i++) {
+            buttons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Button clickedButton = (Button) view;
+                    String buttonText = clickedButton.getText().toString();
+                    preview.setText("Botón seleccionado: " + buttonText);
+                }
+            });
+        }
     }
 
 }
