@@ -6,36 +6,35 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private int firstValue=0;
-    private int secondValue=0;
-    private int finalValue=0;
+    private String finalValue="";
+    private String value="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView preview= findViewById(R.id.preview);
+    }
+    public void onButtonClick(View view) {
         TextView response= findViewById(R.id.response);
-        Button[] buttons = new Button[16];
-        for (int i = 0; i < buttons.length; i++) {
-            String buttonIdName = "button" + (i + 1);
-            int buttonId = getResources().getIdentifier(buttonIdName, "id", getPackageName());
-
-            if (buttonId != 0) {
-                buttons[i] = findViewById(buttonId);
-            }
-        }
-        for (int i = 0; i < buttons.length; i++) {
-            buttons[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Button clickedButton = (Button) view;
-                    String buttonText = clickedButton.getText().toString();
-                    preview.setText("Botón seleccionado: " + buttonText);
-                }
-            });
+        TextView preview= findViewById(R.id.preview);
+        Button clickedButton = (Button) view;
+        String buttonText = clickedButton.getText().toString();
+        value= value+buttonText;
+        preview.setText(value);
+        if(buttonText.equals("C"))
+        {
+            value="";
+            preview.setText("0");
+        }else if(!value.matches(".*\\d.*")){
+            Toast.makeText(getApplicationContext(),"Ingresa un valor",Toast.LENGTH_SHORT).show();
+            value="";
+            preview.setText("0");
         }
     }
+    public void compareString(String operation)
+    {
 
+    }
 }
