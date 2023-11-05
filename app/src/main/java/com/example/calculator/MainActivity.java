@@ -11,6 +11,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
     private String operator="";
@@ -36,40 +37,69 @@ public class MainActivity extends AppCompatActivity {
         {
             showValue="";
             preview.setText("0");
+            response.setText("0");
+            firstValue=0;
+            secondValue=0;
+            thirdValue=0;
+            operator="";
         }else if(!showValue.matches(".*\\d.*"))
         {
             showValue="0"+buttonText;
             preview.setText(showValue);
+        }else if(buttonText.equals("="))
+        {
+            preview.setText(firstValue+operator+secondValue+"=");
+            response.setText(thirdValue+"");
+        }
+        if(operatorList.contains(buttonText))
+        {
+            operator= buttonText;
+            char lastCharacter = showValue.charAt(showValue.length() - 2);
+            if(operatorList.contains(Character.toString(lastCharacter)))
+            {
+                showValue=showValue.replace(lastCharacter,operator.charAt(0));
+                showValue=showValue.substring(0,showValue.length()-1);
+                preview.setText(showValue);
+            }
         }
         if(operatorList.contains(buttonText) && !showValue.isEmpty()&& firstValue==0)
         {
-            operator= operator+buttonText;
-            firstValue=Integer.parseInt(showValue.substring(0,showValue.length()-1));
+            firstValue=Double.parseDouble(showValue.substring(0,showValue.length()-1));
         }
-        if((firstValue!=0 || !operatorList.contains(buttonText))&&secondValue!=0)
+        if(!operatorList.contains(buttonText)&&operator!="")
         {
-            String [] divideValue= showValue.split(operator);
-            secondValue= Integer.parseInt(divideValue[1]);
+            try {
+                String [] divideValue=showValue.split((Pattern.quote(operator)));
+                System.out.println(divideValue[1]);
+                secondValue= Double.parseDouble(divideValue[1]);
+            }catch (Exception e)
+            {
+                System.out.println(e);
+            }
         }
-        if(operatorList.contains(buttonText)&&thirdValue!=0)
+        if(operatorList.contains(buttonText)&&thirdValue!=0&&secondValue!=0)
         {
             showValue=""+thirdValue+buttonText;
+            preview.setText(showValue);
             response.setText(""+thirdValue);
             firstValue=thirdValue;
-        }
-        switch (operator)
+        }else
         {
-            case "+":
-                thirdValue=firstValue+secondValue;
-                break;
-            case "-":
-                thirdValue=firstValue-secondValue;
-                break;
-            case "*":
-                thirdValue=firstValue*secondValue;
-                break;
-            case "/":
-                thirdValue=firstValue/secondValue;
+            switch (operator)
+            {
+                case "+":
+                    thirdValue=firstValue+secondValue;
+                    break;
+                case "-":
+                    thirdValue=firstValue-secondValue;
+                    break;
+                case "*":
+                    thirdValue=firstValue*secondValue;
+                    break;
+                case "/":
+                    thirdValue=firstValue/secondValue;
+            }
         }
+
     }
 }
